@@ -1,0 +1,32 @@
+@extends('layouts.app')
+
+@section('content')
+
+<div class="col-md-8">
+
+    <div class="card">
+
+        <div class="card-header">{{modelName}} #{{ ${{modelNameSingularLowerCase}}->id }}</div>
+
+        <div class="card-body">
+
+            <div class="float-right">
+                @include('partials.crud_menu', ['page' => '{{modelNamePluralLowerCase}}', 'model' => ${{modelNameSingularLowerCase}}])
+            </div>
+
+            <br/>
+            <br/>
+
+            <div class="table-responsive">
+                <table class="table table-borderless">
+                    <tbody>
+                        {{fieldSection}}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@endsection

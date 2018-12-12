@@ -1,0 +1,13 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class {{modelName}} extends Model
+{
+	{{tableName}}
+	{{primaryKey}}
+    {{fillableFields}}
+    {{guardedFields}}
+}

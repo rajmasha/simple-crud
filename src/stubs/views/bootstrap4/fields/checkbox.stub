@@ -1,0 +1,18 @@
+
+
+<div class="form-group row">
+
+    <label class="col-md-2 col-form-label text-md-right">{{upperName}}</label>
+
+    <div class="col-md-6 d-flex align-items-center">
+
+		<div class="checkbox">
+
+			<input type="hidden" name="{{name}}" value="0">
+
+			<input type="checkbox" name="{{name}}" value="1">
+
+		</div>
+
+	</div>
+</div>

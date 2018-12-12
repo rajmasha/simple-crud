@@ -1,0 +1,33 @@
+{
+    "name": "rajmasha/simple-crud",
+    "description": "A simple Laravel package for generating CRUD for your Laravel Applications",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "crud",
+        "simple crud",
+        "laravel crud generator"
+    ],
+    "authors": [
+        {
+            "name": "Raj Asha",
+            "email": "rajcoder7@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rajmasha\\SimpleCrud\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rajmasha\\SimpleCrud\\SimpleCrudServiceProvider"
+            ]
+        }
+    }
+}

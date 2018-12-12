@@ -1,0 +1,6 @@
+
+{{fields}}
+
+<div class="form-group offset-md-2">
+    <input class="btn btn-primary" type="submit" value="{{ $formType === 'create' ? 'Store' : 'Update' }}">
+</div>

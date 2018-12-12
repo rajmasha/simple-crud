@@ -1,0 +1,67 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\{{modelName}};
+use Illuminate\Http\Request;
+
+class {{modelName}}Controller extends Controller
+{
+    {{middlewareSection}}
+
+    public function index(Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = {{perPage}};
+
+        {{querySection}}
+
+        return view('{{modelNamePluralLowerCase}}.index', compact('{{modelNamePluralLowerCase}}'));
+    }
+
+
+    public function create()
+    {
+        return view('{{modelNamePluralLowerCase}}.create');
+    }
+
+
+    public function store(Request $request)
+    {
+        {{validationSection}}
+
+        ${{modelNameSingularLowerCase}} = {{modelName}}::create($request->all());
+
+        return redirect('/{{modelNamePluralLowerCase}}')->with('message', '{{modelName}} Created!');
+    }
+
+
+    public function show({{modelName}} ${{modelNameSingularLowerCase}})
+    {
+        return view('{{modelNamePluralLowerCase}}.show', compact('{{modelNameSingularLowerCase}}'));
+    }
+
+
+    public function edit({{modelName}} ${{modelNameSingularLowerCase}})
+    {
+        return view('{{modelNamePluralLowerCase}}.edit', compact('{{modelNameSingularLowerCase}}'));
+    }
+
+
+    public function update(Request $request, {{modelName}} ${{modelNameSingularLowerCase}})
+    {
+        {{validationSection}}
+
+        ${{modelNameSingularLowerCase}}->update($request->all());
+
+        return redirect('/{{modelNamePluralLowerCase}}')->with('message', '{{modelName}} Updated!');
+    }
+
+
+    public function destroy({{modelName}} ${{modelNameSingularLowerCase}})
+    {
+        ${{modelNameSingularLowerCase}}->delete();
+
+        return redirect('/{{modelNamePluralLowerCase}}')->with('message', '{{modelName}} Deleted!');
+    }
+}

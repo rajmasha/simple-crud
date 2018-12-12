@@ -1,0 +1,66 @@
+@extends('layouts.app')
+
+@section('content')
+
+    <div class="col-md-8">
+
+        <div class="card">
+
+            <div class="card-header">{{modelNamePlural}}</div>
+
+            <div class="card-body">
+
+			{{-- Add button --}}
+            @include('partials.add_btn', ['page' => '{{modelNamePluralLowerCase}}'])
+
+            {{-- Searchbox for searching fields --}}
+            @include('partials.search_box', ['page' => '{{modelNamePluralLowerCase}}'])
+
+
+			<div class="table-responsive">
+
+                <table class="table table-borderless table-striped">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            {{tableHeaders}}
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    @foreach(${{modelNamePluralLowerCase}} as ${{modelNameSingularLowerCase}})
+
+                        <tr>
+                            <td>
+                                {{ ${{modelNameSingularLowerCase}}->id }}
+                            </td>
+
+                            {{tableValues}}
+
+                            <td>
+
+                            @include('partials.crud_menu', ['page' => '{{modelNamePluralLowerCase}}', 'model' => ${{modelNameSingularLowerCase}}])
+
+                            </td>
+                        </tr>
+
+                    @endforeach
+
+                    </tbody>
+
+                </table>
+
+                @include('partials.paginate', ['model' => ${{modelNamePluralLowerCase}}])
+
+            <div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@endsection
