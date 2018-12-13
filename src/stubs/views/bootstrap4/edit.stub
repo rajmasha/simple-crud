@@ -10,6 +10,11 @@
 
         <div class="card-body">
 
+            @include ('partials.back_btn' , ['page' => '{{modelNamePluralLowerCase}}'])
+
+            <br>
+            <br>
+
             <form role="form" method="POST" action="{{ url('/{{modelNamePluralLowerCase}}/'.${{modelNameSingularLowerCase}}->id) }}">
 
                 {{ method_field('PUT') }}

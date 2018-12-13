@@ -10,6 +10,8 @@
 
         <div class="card-body">
 
+            @include ('partials.back_btn' , ['page' => '{{modelNamePluralLowerCase}}'])
+
             <div class="float-right">
                 @include('partials.crud_menu', ['page' => '{{modelNamePluralLowerCase}}', 'model' => ${{modelNameSingularLowerCase}}])
             </div>

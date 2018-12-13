@@ -14,7 +14,6 @@
             "email": "rajcoder7@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=7.0"
     },
