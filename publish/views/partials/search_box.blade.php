@@ -1,5 +1,4 @@
 
-{{-- Search form for searching different records from various fields --}}
 <form class="col-md-8 float-right" method="GET" action="{{ $page }}" accept-charset="UTF-8" role="search">
 
 	<div class="form-group row d-flex justify-content-end">
@@ -11,7 +10,6 @@
 		{{-- Search button --}}
 		<button class="btn btn-primary col-md-2" type="submit">
 		Search
-		<span class="glyphicon glyphicon-search"></span>
 		</button>
 
 	</div>

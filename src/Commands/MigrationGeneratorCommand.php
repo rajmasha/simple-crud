@@ -116,7 +116,7 @@ class MigrationGeneratorCommand extends Command
 
         foreach ($segments as $key => $value)
         {
-            // remove options={} segment if present
+            // Remove options={} segment if present
             if (preg_match("/options={[\s\S]*}/", $value))
                 continue;
 

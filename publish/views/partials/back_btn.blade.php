@@ -1,7 +1,4 @@
 
-{{-- Back button --}}
-<a href="{{ url($page) }}">
-    <button type="button" class="btn btn-default">
-        Back
-    </button>
+<a href="{{ url($page) }}" class="btn btn-info btn-sm" style="color:#fff">
+	Back
 </a>

@@ -18,7 +18,7 @@
 
     <div class="container">
 
-        <div class="row col-md-12 d-flex justify-content-md-center m-0 mt-5">
+        <div class="row col-md-12 d-flex justify-content-md-center m-0 mt-5 mb-5">
 
             @yield('content')
 

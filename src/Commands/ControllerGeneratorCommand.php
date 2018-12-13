@@ -121,7 +121,7 @@ class ControllerGeneratorCommand extends Command
 
         $validationSection = "\$this->validate(\$request, [\n";
 
-        // breaks validation rule into two parts by the first occurence of : symbol
+        // Break validation rule into two parts with the first occurence of : symbol
         foreach ($validation_arr as $key => $value)
         {
             $rule = preg_split('/:/', $value, 2);

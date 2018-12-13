@@ -1,5 +1,5 @@
 
-<div class="d-flex">
+<div class="d-flex" style="color: grey;">
 
 	<a href="{{ url($page.'/'.$model->id) }}">View</a>
 	&nbsp;|&nbsp;

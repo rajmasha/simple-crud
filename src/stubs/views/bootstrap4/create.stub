@@ -8,6 +8,7 @@
 
             <div class="card-body">
 
+                {{-- Back button --}}
                 @include ('partials.back_btn' , ['page' => '{{modelNamePluralLowerCase}}'])
 
                 <br>
