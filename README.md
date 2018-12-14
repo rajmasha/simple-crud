@@ -37,4 +37,4 @@ Commands available in the package:
 
 ## License
 
-The package is open source and licensed under the MIT license. See the [licesnse file](LICENSE.md) for detail.
+The package is open source and licensed under the MIT license. See the [license file](LICENSE.md) for detail.

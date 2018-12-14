@@ -26,27 +26,37 @@ php artisan crud:model Post --fields='title; body; author; category'
 
 #### Options
 
- - --fields='field1; field2;....fieldn'
+**--fields**
 
- Provide the list of fields that you want in the model to appear in the fillable array. This is same as fillable option.
+Syntax: ` --fields='field1; field2;....fieldn' `
 
- > Note that the fields must be separated by a semicolon ( ; )
+Provide the list of fields that you want in the model to appear in the fillable array. This is same as fillable option.
 
- - --fillable='field1; field2;....fieldn'
+> Note that the fields must be separated by a semicolon ( ; )
 
- Provide the list of fields that you want in the model to appear in the fillable array.
+**--fillable**
 
- - --guarded='field1; field2;....fieldn'
+Syntax: ` --fillable='field1; field2;....fieldn' `
 
- Provide the list of fields that you want in the model to appear in the guarded array.
+Provide the list of fields that you want in the model to appear in the fillable array.
 
- - --table=tablename
+**--guarded**
 
- Provide the table name that you want to use for the model. By default, Laravel will use the lowercase plural of the Model name as the table name.
+Syntax: ` --guarded='field1; field2;....fieldn' `
 
- - --primarykey=key
+Provide the list of fields that you want in the model to appear in the guarded array.
 
- Provide the table column that you want to use as the primary key. Default is id.
+**--table**
+
+Syntax: ` --table=tablename `
+
+Provide the table name that you want to use for the model. By default, Laravel will use the lowercase plural of the Model name as the table name.
+
+**--primarykey**
+
+Syntax: ` --primarykey=key `
+
+Provide the table column that you want to use as the primary key. Default is id.
 
 
 ## Migration Command
@@ -65,27 +75,30 @@ php artisan crud:migration Post --fields='title:string(50):unique(); body:text(1
 
 #### Options
 
- - --fields='field1:type1:options; field2:type2:options;....'
+**--fields**
 
- Provide the list of fields along with its type and options.
+Syntax: ` --fields='field1:type1:options; field2:type2:options;....' `
 
- > Note that the fields must be separated by a semicolon ( ; )
+Provide the list of fields along with its type and options.
 
- #### Syntax:
 
- name : type : option1 : option2...
+#### Field Syntax:
 
- Example:
+```
+name : type : option1 : option2...
+```
 
- ```
- title:string(50):unique():nullable():default("Title")
- ```
+Example:
 
- Output:
+```
+title:string(50):unique():nullable():default("Title")
+```
 
- ```
- $table->string('title', 50)->unique()->nullable()->default("Title");
- ```
+Output:
+
+```
+$table->string('title', 50)->unique()->nullable()->default("Title");
+```
 
 
 
@@ -106,61 +119,69 @@ php artisan crud:controller Post --fields='title; body; author; category' --vali
 
 #### Options
 
- - --fields='field1; field2;...fieldn'
+**--fields**
 
- Provide the list of fields.
+Syntax: ` --fields='field1; field2;...fieldn' `
 
- > Note that the fields must be separated by a semicolon ( ; )
+Provide the list of fields separated by semicolon (;).
 
- - --paginate
 
- Provide a number eg. 10 which will be used to paginate the result on the index view. Default value is 15.
+**--paginate**
 
- - --validate='field1:rule1|rule2; field2:rule3|rule4;...'
+Provide a number eg. 10 which will be used to paginate the result on the index view. Default value is 15.
 
- Provide field name along with the validation rules (separated with |) for each field.
+**--validate**
+
+Syntax: ` --validate='field1:rule1|rule2; field2:rule3|rule4;...' `
+
+Provide field name along with the validation rules for each field.
 
  > Note that the fields must be separated by a semicolon ( ; ) and the rules must be separated by |
 
- #### Syntax:
+#### Field Syntax:
 
- name : rule1 | rule2 |...
+```
+name : rule1 | rule2 |...
+```
 
- Example:
+Example:
 
- ```
- category:required|string|exists:category,name
- ```
+```
+category:required|string|exists:category,name
+```
 
- Output:
+Output:
+
 In the **store** and **update** method of the Controller, the following will be generated:
 
- ```
- $this->validate($request, [
-	...
-	'category' => 'required|string|exists:category,name',
-	...
- ]);
- ```
+```
+$this->validate($request, [
+...
+'category' => 'required|string|exists:category,name',
+...
+]);
+```
 
- - --middleware='middleware1, middleware2'
+**--middleware**
 
- Provide the list of middleware you want to use in the controller. This will create a **contructor** in the controller and add the middlewares.
+Syntax: ` --middleware='middleware1, middleware2' `
 
- Example:
+Provide the list of middleware you want to use in the controller. This will create a **contructor** in the controller and add the middlewares.
 
- ```
- --middleware='auth, check'
- ```
+Example:
 
- Output:
+```
+--middleware='auth, check'
+```
 
- ```
- public function __construct()
- {
-    $this->middleware(['auth', 'check']);
- }
- ```
+Output:
+
+```
+public function __construct()
+{
+$this->middleware(['auth', 'check']);
+}
+```
 
 
 ## View Command
@@ -180,15 +201,17 @@ php artisan crud:view Post --fields='title:string; body:text; author:string; cat
 
 #### Options
 
- - --fields='field1:type1; field2:type2;....fieldn:typen'
+**--fields**
 
- Provide the list of fields that you want in the views to appear.
+Syntax: ` --fields='field1:type1; field2:type2;....fieldn:typen' `
 
- > Note that the fields must be separated by a semicolon ( ; )
+Provide the list of fields that you want in the views to appear.
 
- - --template=customtemplate
+**--template**
 
- You can optionally provide a template name that you want to use instead of the default - **bootstrap4**. This is discussed in detail in the [Custom Template](template.md) page.
+Syntax: ` --template=customtemplate `
+
+You can optionally provide a template name that you want to use instead of the default - **bootstrap4**. This is discussed in detail in the [Custom Template](template.md) page.
 
 
 ## "All" Command

@@ -1,7 +1,7 @@
 
 # Documentation
 
-The documentation will cover all the commands in the package including their usage and options.
+The documentation covers all the commands in the package including their usage and options.
 
 1. [Installation](installation.md)
 2. [Usage](usage.md)

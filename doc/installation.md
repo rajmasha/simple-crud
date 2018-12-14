@@ -14,13 +14,10 @@ php artisan vendor:publish --provider="Rajmasha\SimpleCrud\SimpleCrudServiceProv
 ```
 
 This will create:
-1. **simple-crud/** in the **resources** folder of your project.
 
-**simple-crud** directory stores all the stubs required for generation.
+*simple-crud/* in the *resources* folder of your project which stores all the stubs required for generation.
 
-2. **layouts/** and **partials/** in the path **/resources/views/**
-
-**layouts/** stores the **app.blade.php** file which is the main layout file.
-
-**partials/** stores the *.blade* files for components such as searchbox, menu etc.
+*layouts/* and *partials/* in the path */resources/views/*
+ - *layouts/* stores the *app.blade.php* file which is the main layout file.
+ - *partials/* stores the *.blade* files for components such as searchbox, menu etc.
 
